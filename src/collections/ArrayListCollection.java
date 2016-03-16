@@ -56,7 +56,8 @@ public class ArrayListCollection {
     public long iteratorAdd() {
         startTime = System.currentTimeMillis();
         for (ListIterator<Integer> it = arrayList.listIterator(); it.hasNext();) {
-            it.add(it.next());
+            it.next();
+            it.add(1);
         }
         estimatedTime = System.currentTimeMillis() - startTime;
         return estimatedTime;
