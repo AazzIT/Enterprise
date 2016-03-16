@@ -19,9 +19,11 @@ public class TreeSetCollection {
 
     public long get(int count) {
         startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            this.treeSet.get(i);
+
+        for (Iterator<Integer> it = treeSet.iterator(); it.hasNext();){
+            it.next();
         }
+
         estimatedTime = System.currentTimeMillis() - startTime;
         return estimatedTime;
     }
@@ -53,8 +55,8 @@ public class TreeSetCollection {
 
     public long iteratorAdd() {
         startTime = System.currentTimeMillis();
-        for (Iterator<Integer> it = treeSet.Iterator(); it.hasNext();){
-            it.add(it.next());
+        for (Iterator<Integer> it = treeSet.iterator(); it.hasNext();){
+            it.next();
         }
         estimatedTime = System.currentTimeMillis() - startTime;
         return estimatedTime;
@@ -62,7 +64,7 @@ public class TreeSetCollection {
 
     public long iteratorRemove() {
         startTime = System.currentTimeMillis();
-        for (Iterator<Integer> it = treeSet.Iterator(); it.hasNext();){
+        for (Iterator<Integer> it = treeSet.iterator(); it.hasNext();){
             it.next();
             it.remove();
         }
